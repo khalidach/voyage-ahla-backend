@@ -10,7 +10,11 @@ const port = process.env.PORT || 5000;
 // --- Middleware ---
 app.use(
   cors({
-    origin: "http://localhost:8080", // Allow your frontend origin
+    origin: [
+      "http://localhost:8080",
+      "https://voyage-ahla-backend.vercel.app/",
+      "https://voyageahlaelkheir.netlify.app/",
+    ], // Add your deployed frontend URL(s)
     credentials: true, // Allow cookies to be sent
   })
 );
